@@ -15,6 +15,16 @@
     <![endif]-->
     <link rel="stylesheet" href="//at.alicdn.com/t/font_747587_b645vl1tfh.css">
     <style>
+        @media (max-width: 320px) {
+            .btn{margin: 0px 2px;}
+            .innerMiddle p{font-size: 12px;}
+        }
+        @media (min-width: 360px) {
+            .btn{margin: 0px 10px;}
+        }
+        @media (min-width: 768px) {
+            .btn{margin: 0px 50px;}
+        }
         *{
             margin: 0;
             padding: 0;
@@ -48,11 +58,7 @@
             color: #ffffff;
             border: 2px solid transparent;
         }
-        .btn:focus{outline: none};
-        .btn:focus{color: #EA7B80;}
-        .btn{
-            margin: 0px 10px;
-        }
+        .btn:focus{outline: none; color: #EA7B80;};
         .set{
             margin: 30px 0px;
         }
@@ -71,8 +77,11 @@
             float: left;
             width: 50%;
         }
-        .innerMiddle{
-            padding: 30px 0px;
+        @media (min-width: 320px) {
+            .innerMiddle{padding: 30px 0px;}
+        }
+        @media (min-width: 768px) {
+            .innerMiddle{padding: 60px 0px;}
         }
         .innerMiddle > div{
             float: left;
