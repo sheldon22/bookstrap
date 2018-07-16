@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>bootstrap Learning</title>
     <!-- Bootstrap -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -20,42 +20,25 @@
             padding: 0;
             font-size: 16px;
         }
-        .inner{
+        body{
             margin: 20px;
-            position: relative; 
         }
-        .inner::after{
+        .clearfix::after{
             content: '';
             display: block;
-            width: 32px;
-            height: 22px;
-        } 
-        .inner p{
-            display: inline-block;
-            margin: 0;
+            clear: both;
         }
-        .setRight{
-            position: absolute;
-            top: 0px;
-            right: 0px;
+        .top{
+            margin-bottom: 20px;
         }
-        .setMiddleOne{
-            position: absolute;
-            top: 0px;
-            right: 50%;
-            font-weight: bold;
-        }
-        .setLeft{
-            position: absolute;
-            top: 0px;
-            left: 0px;
+        .top > div{
+            float: left;
+            width: 33.3%;
         }
         .buttons{
-            padding: 95px 10px;
-            background-color: #eeeeee;
+            padding: 60px 10px;
         }
         .buttons > button{
-            padding: 10px 30px;
             color: #EA7B80;
             border: 2px solid #EA7B80;
             background-color: #ffffff;
@@ -63,44 +46,40 @@
         .buttons > button:hover{
             background: #EA7B80;
             color: #ffffff;
+            border: 2px solid transparent;
         }
+        .btn:focus{outline: none};
+        .btn:focus{color: #EA7B80;}
         .btn{
-            margin: 0px 40px;
+            margin: 0px 10px;
         }
-        .setMiddleTwo{
-            position: absolute;
-            top: 0px;
-            right: 50%;
+        .set{
+            margin: 30px 0px;
+        }
+        .set > div{
+            float: left;
+            width: 33.3%;
         }
         .line{
-            border: 10px solid #eeeeee;  
+            border: 5px solid #eeeeee;  
+            margin: 20px 0px;
         }
-        .setFH{
-            position: absolute;
-            top: 0px;
-            left: 20%;
+        .middle{
+            margin: 30px 0px; 
         }
-        .setPL{
-            position: absolute;
-            top: 0px;
-            right: 25%;
+        .middle > div{
+            float: left;
+            width: 50%;
         }
         .innerMiddle{
-            margin: 95px 20px;
-            position: relative; 
+            padding: 30px 0px;
         }
-        .innerMiddle::after{
-            content: '';
-            display: block;
-            width: 32px;
-            height: 22px;
-        } 
-        .innerMiddle  p{
-            margin: 10px 0px 0px 0px;
+        .innerMiddle > div{
+            float: left;
+            width: 20%;
         }
         .icon > div{
-            margin: 30px 20px;
-            position: relative;
+            margin: 30px 0px;
         }
         .lineTwo{
             margin: 15px 0px;
@@ -109,15 +88,14 @@
     </style>
   </head>
   <body>
-    <div class="outer">
+    <div class="container-fluid">       
         <header>
-            <div class="inner">
-                <div class="setLeft">
-                    <i class="iconfont icon-return"></i>
-                    <p>返回</p> 
+            <div class="top clearfix">
+                <div class="text-left">
+                    <i class="iconfont icon-return">返回</i>
                 </div>
-                <p class="setMiddleOne">我的</p> 
-                <div class="setRight">
+                <div class="text-center">我的</div>
+                <div class="text-right">
                     <i class="iconfont icon-set"></i>
                 </div>     
             </div>
@@ -125,76 +103,69 @@
                 <button class="btn btn-lg">立即登录</button>
                 <button class="btn btn-lg">新人注册</button>
             </div>
-            <div class="inner">
-                <div class="setLeft">
-                    <i class="iconfont icon-SCar"></i>
-                    <p>购物车</p>
+            <div class="set clearfix">
+                <div class="text-left">
+                    <i class="iconfont icon-SCar">&nbsp&nbsp购物车</i>
                 </div>
-                <div class="setMiddleTwo">
-                    <i class="iconfont icon-bookMark"></i>
-                    <p>收藏夹</p> 
+                <div class="text-center">
+                    <i class="iconfont icon-bookMark">&nbsp&nbsp收藏夹</i>
                 </div>
-                <div class="setRight">
-                    <i class="iconfont icon-track"></i>
-                    <p>我的足迹</p> 
+                <div class="text-right">
+                    <i class="iconfont icon-track">&nbsp&nbsp足迹</i>
                 </div>
             </div>  
         </header>
         <div class="line"></div>
-        <div class="middle">
-            <div class="inner">
-                <div class="setLeft">
-                    <i class="iconfont icon-order"></i>
-                    <p>我的订单</p>
-                </div>
-                <div class="setRight">
-                    <p>查看全部订单</p> 
-                    <i class="iconfont icon-returnRight"></i>  
-                </div>
+        <div class="middle clearfix">
+            <div class="text-left">
+                <i class="iconfont icon-order">&nbsp&nbsp我的订单</i>
             </div>
-            <div class="innerMiddle">
-                <div class="setLeft text-center">
-                    <i class="iconfont icon-pay"></i>
-                    <p>待付款</p>
-                </div>
-                <div class="setFH text-center">
-                    <i class="iconfont icon-FH"></i>
-                    <p>待发货</p>
-                </div>
-                <div class="setMiddleTwo text-center">
-                    <i class="iconfont icon-SH"></i>
-                    <p>待收货</p>
-                </div>
-                <div class="setPL text-center">
-                    <i class="iconfont icon-evaluate"></i>
-                    <p>待评论</p>   
-                </div>
-                <div class="setRight text-center">
-                    <i class="iconfont icon-afterSale"></i>
-                    <p>售后/退款</p>
-                </div>
+            <div class="text-right">
+                查看全部订单&nbsp&nbsp<i class="iconfont icon-returnRight"></i>  
             </div>
-            <div class="line"></div>
-            <div class="icon">
-                <div>
-                    <i class="iconfont icon-HB">&nbsp&nbsp&nbsp&nbsp现金红包</i>
-                    <i class="iconfont icon-returnRight setRight"></i>
-                    <div class="lineTwo"></div>
-                </div>
-                <div>
-                    <i class="iconfont icon-LJ">&nbsp&nbsp&nbsp领卷中心</i>
-                    <i class="iconfont icon-returnRight setRight"></i>
-                    <div class="lineTwo"></div>
-                </div>
-                <div>
-                    <i class="iconfont icon-theme">&nbsp&nbsp&nbsp&nbsp主题换肤</i>
-                    <i class="iconfont icon-returnRight setRight"></i>
-                    <div class="lineTwo"></div>
-                </div>
-                <div>
-                    <i class="iconfont icon-KF">&nbsp&nbsp&nbsp&nbsp客服中心</i>
-                    <i class="iconfont icon-returnRight setRight"></i>
-                </div>
+        </div>
+        <div class="innerMiddle clearfix">
+            <div class="setLeft text-center">
+                <i class="iconfont icon-pay"></i>
+                <p>待付款</p>
+            </div>
+            <div class="setFH text-center">
+                <i class="iconfont icon-FH"></i>
+                <p>待发货</p>
+            </div>
+            <div class="setMiddleTwo text-center">
+                <i class="iconfont icon-SH"></i>
+                <p>待收货</p>
+            </div>
+            <div class="setPL text-center">
+                <i class="iconfont icon-evaluate"></i>
+                <p>待评论</p>   
+            </div>
+            <div class="setRight text-center">
+                <i class="iconfont icon-afterSale"></i>
+                <p>售后</p>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="icon">
+            <div>
+                <i class="iconfont icon-HB">&nbsp&nbsp&nbsp&nbsp现金红包</i>
+                <i class="iconfont icon-returnRight setRight"></i>
+                <div class="lineTwo"></div>
+            </div>
+            <div>
+                <i class="iconfont icon-LJ">&nbsp&nbsp&nbsp领卷中心</i>
+                <i class="iconfont icon-returnRight setRight"></i>
+                <div class="lineTwo"></div>
+            </div>
+            <div>
+                <i class="iconfont icon-theme">&nbsp&nbsp&nbsp&nbsp主题换肤</i>
+                <i class="iconfont icon-returnRight setRight"></i>
+                <div class="lineTwo"></div>
+            </div>
+            <div>
+                <i class="iconfont icon-KF">&nbsp&nbsp&nbsp&nbsp客服中心</i>
+                <i class="iconfont icon-returnRight setRight"></i>
             </div>
         </div>
     </div>
